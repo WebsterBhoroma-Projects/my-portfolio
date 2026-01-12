@@ -95,6 +95,89 @@
             margin-bottom: 20px;
         }
 
+        /* --- New Animation Styles --- */
+
+/* Typing Effect */
+.typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Floating Animation for Tech Badges */
+.tech-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    margin: 5px;
+    font-size: 0.8rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Delaying the float for different badges */
+.tech-badge:nth-child(2) { animation-delay: 0.5s; }
+.tech-badge:nth-child(3) { animation-delay: 1s; }
+.tech-badge:nth-child(4) { animation-delay: 1.5s; }
+
+/* The Terminal Window */
+.terminal-window {
+    background: #1e1e1e;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #444;
+}
+
+.terminal-header {
+    background: #333;
+    padding: 5px 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.terminal-body {
+    padding: 15px;
+    color: #00ff00;
+    font-size: 0.85rem;
+    height: 150px;
+    overflow: hidden;
+}
+
+.code-line {
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    width: 0;
+    animation: typing-code 4s steps(40, end) infinite;
+}
+
+@keyframes typing-code {
+    from { width: 0 }
+    to { width: 100% }
+}
+
         /* Section Styling */
         section {
             padding: 60px 5%;
